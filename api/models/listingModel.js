@@ -14,15 +14,11 @@ const listingSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    city: {
+    lga: {
       type: String,
       required: true,
     },
     state: {
-      type: String,
-      required: true,
-    },
-    country: {
       type: String,
       required: true,
     },
@@ -39,13 +35,17 @@ const listingSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    installmentAppendTo: {
+      type: String,
+      required: false,
+    },
     initialPayment: {
       type: Number,
-      required: false,
+      required: true,
     },
     monthlyPayment: {
       type: Number,
-      required: false,
+      required: true,
     },
     duration: {
       type: Number,
@@ -99,7 +99,7 @@ const listingSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    subtype: {
+    subType: {
       type: String,
       required: false,
     },
@@ -107,7 +107,15 @@ const listingSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
+    installment: {
+      type: Boolean,
+      required: true,
+    },
     imageUrls: {
+      type: Array,
+      required: true,
+    },
+    features: {
       type: Array,
       required: true,
     },
