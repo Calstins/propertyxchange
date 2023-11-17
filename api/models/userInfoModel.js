@@ -10,118 +10,43 @@ const userInfoSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    street: {
+    linkedinLink: {
       type: String,
       required: true,
     },
-    lga: {
+    twitterLink: {
       type: String,
       required: true,
     },
-    state: {
+    facebookLink: {
       type: String,
       required: true,
     },
-    regularPrice: {
+    phoneNum: {
       type: Number,
       required: true,
     },
-    discountPrice: {
+    whatsAppNum: {
       type: Number,
       required: true,
-      default: 0,
     },
-    appendTo: {
+    address: {
       type: String,
-      required: false,
-    },
-    installmentAppendTo: {
-      type: String,
-      required: false,
-    },
-    initialPayment: {
-      type: Number,
       required: true,
     },
-    monthlyPayment: {
-      type: Number,
-      required: true,
-    },
-    duration: {
-      type: Number,
-      required: false,
-    },
-    features: {
-      type: [String],
-      required: false,
-    },
-    bathrooms: {
-      type: Number,
-      required: true,
-    },
-    bedrooms: {
-      type: Number,
-      required: true,
-    },
-    toilets: {
-      type: Number,
-      required: true,
-    },
-    furnished: {
+    verification: {
       type: Boolean,
       required: true,
+      default: false,
     },
-    serviced: {
-      type: Boolean,
-      required: true,
-    },
-    newlyBuilt: {
-      type: Boolean,
-      required: true,
-    },
-    parking: {
-      type: Boolean,
-      required: true,
-    },
-    youtubeLink: {
-      type: String,
-      required: false,
-    },
-    instagramLink: {
-      type: String,
-      required: false,
-    },
-    category: {
-      type: String,
-      required: true,
-    },
-    type: {
-      type: String,
-      required: true,
-    },
-    subType: {
-      type: String,
-      required: false,
-    },
-    offer: {
-      type: Boolean,
-      required: true,
-    },
-    installment: {
-      type: Boolean,
-      required: true,
-    },
-    imageUrls: {
+    uploadUrls: {
       type: Array,
       required: true,
     },
-    features: {
-      type: Array,
-      required: true,
-    },
-    userRef: {
+    logo: {
       type: String,
-      required: true,
+      default:
+        'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
     },
   },
   { timestamps: true }

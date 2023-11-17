@@ -16,6 +16,14 @@ const SignUp = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check if passwords match
+    if (formData.password !== formData.confirmPassword) {
+      setLoading(false);
+      setError("Passwords don't match");
+      return;
+    }
+
     try {
       setLoading(true);
       const res = await fetch('/api/auth/sign-up', {
@@ -58,13 +66,22 @@ const SignUp = () => {
           id="email"
           onChange={handleChange}
         />
-        <input
-          type="password"
-          placeholder="password"
-          className="border p-3 rounded-lg"
-          id="password"
-          onChange={handleChange}
-        />
+        <div className="flex flex-wrap justify-between">
+          <input
+            type="password"
+            placeholder="password"
+            className="border p-3 rounded-lg"
+            id="password"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            className="border p-3 rounded-lg"
+            id="confirmPassword"
+            onChange={handleChange}
+          />
+        </div>
         <button
           disable={loading}
           className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"

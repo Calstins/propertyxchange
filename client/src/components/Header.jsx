@@ -34,7 +34,7 @@ const Header = () => {
           change
         </div>
         <form
-          className="bg-slate-100 p-3 rounded-lg flex items-center"
+          className="bg-white p-3 rounded-lg flex items-center"
           onSubmit={handleSubmit}
         >
           <input
@@ -59,7 +59,7 @@ const Header = () => {
               About
             </li>
           </Link>
-          <Link to="/profile">
+          <Link to="/dashboard">
             {currentUser ? (
               <img
                 className="rounded-full h-7 w-7 object-cover"

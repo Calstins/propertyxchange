@@ -9,7 +9,7 @@ import Social from './Social';
 export const Footer = () => {
   const navigate = useNavigate();
   return (
-    <div className="mt-10">
+    <div className="">
       <div className="w-full bg-white border-b shadow-sm">
         <div className="max-w-6xl mx-auto px-3 flex items-center justify-between py-4">
           <div

@@ -862,6 +862,7 @@ export const locationData = [
     no_of_lga: 20,
     lga: [
       'Agege',
+      'Ajah',
       'Ajeromi-Ifelodun',
       'Alimosho',
       'Amuwo-Odofin',
