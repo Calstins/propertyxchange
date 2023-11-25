@@ -4,5 +4,22 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.hide-scrollbar': {
+          /* Hide the scrollbar but still allow scrolling */
+          '-ms-overflow-style': 'none' /* IE and Edge */,
+          'scrollbar-width': 'none' /* Firefox */,
+
+          /* WebKit (Chrome, Safari) */
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 };

@@ -29,7 +29,7 @@ export default function CreateListing() {
   const [subTypes, setSubType] = useState([]);
   const [selectedSubType, setSelectedSubType] = useState('');
 
-  //validate link input
+  //validate social link input
   const [youtubeLinkErr, setYoutubeLinkErr] = useState(false);
   const [instagramLinkErr, setInstagramLinkErr] = useState(false);
 
@@ -335,7 +335,7 @@ export default function CreateListing() {
   return (
     <Dashboard>
       <main className="p-3 max-w-5xl mx-auto">
-        <h1 className="text-3xl font-semibold text-center my-7">
+        <h1 className="text-2xl font-semibold text-center my-3">
           Create a Listing
         </h1>
         <form
