@@ -84,10 +84,42 @@ export const getListings = async (req, res, next) => {
       parking = { $in: [false, true] };
     }
 
+    let newlyBuilt = req.query.newlyBuilt;
+
+    if (newlyBuilt === undefined || newlyBuilt === 'false') {
+      newlyBuilt = { $in: [false, true] };
+    }
+
+    let installment = req.query.installment;
+
+    if (installment === undefined || installment === 'false') {
+      installment = { $in: [false, true] };
+    }
+
+    let serviced = req.query.serviced;
+
+    if (serviced === undefined || serviced === 'false') {
+      serviced = { $in: [false, true] };
+    }
+
+    let category = req.query.category;
+
+    if (category === undefined || category === 'all') {
+      category = { $in: ['sale', 'rent', 'short-let'] };
+    }
+
     let type = req.query.type;
 
     if (type === undefined || type === 'all') {
-      type = { $in: ['sale', 'rent'] };
+      type = {
+        $in: [
+          'Co-working Space',
+          'Commercial Property',
+          'Flat/Apartment',
+          'House',
+          'Land',
+        ],
+      };
     }
 
     const searchTerm = req.query.searchTerm || '';
@@ -99,8 +131,12 @@ export const getListings = async (req, res, next) => {
     const listings = await Listing.find({
       name: { $regex: searchTerm, $options: 'i' },
       offer,
+      installment,
       furnished,
       parking,
+      category,
+      newlyBuilt,
+      serviced,
       type,
     })
       .sort({ [sort]: order })
